@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import bankonter2.view.PanelContrato;
 import utils.Apariencia;
 
 
@@ -14,6 +15,7 @@ public class Principal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private PanelContrato pc;
 	
 	static {
 		Apariencia.setAparienciasOrdenadas(Apariencia.aparienciasOrdenadas);
@@ -47,7 +49,8 @@ public class Principal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
+		pc = new PanelContrato();
+		setContentPane(pc);
 	}
 
 }

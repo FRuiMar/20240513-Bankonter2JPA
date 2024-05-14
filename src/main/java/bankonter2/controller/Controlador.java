@@ -20,6 +20,8 @@ public class Controlador {
 	private String nombreEntidadControlada = "";
 	private Class entidadControlada = null;
 
+
+	
 	/**
 	 * 
 	 * @param nombreEntidad
@@ -41,11 +43,11 @@ public class Controlador {
 	}
 
 	/**
-	 * 
+	 * Ecuentras por id
 	 * @param id
 	 * @return
 	 */
-	public Entidad findById(int id) {
+	public Entidad find(int id) {
 		try {
 			EntityManager em = getEntityManagerFactory().createEntityManager();
 			Entidad entidad = (Entidad) em.find(this.entidadControlada, id);
@@ -59,7 +61,7 @@ public class Controlador {
 	
 	
 	/**
-	 * 
+	 * borras todos los registros
 	 */
 	public void deleteAll() {
 		EntityManager em = getEntityManagerFactory().createEntityManager();
@@ -70,7 +72,7 @@ public class Controlador {
 	}
 
 	/**
-	 * Insertar
+	 * insertar nuevo
 	 */
 	public void persist(Entidad e) {
 		EntityManager em = getEntityManagerFactory().createEntityManager();
@@ -81,7 +83,7 @@ public class Controlador {
 	}
 
 	/**
-	 * Actualizar
+	 * actualizar
 	 */
 	public void merge(Entidad e) {
 		EntityManager em = getEntityManagerFactory().createEntityManager();
@@ -92,7 +94,8 @@ public class Controlador {
 	}
 
 	/**
-	 * 
+	 * de aquí llamo o a merge(actualizar) o a persist(insertar)
+	 * Es el mismo metodo que hay en guardar, pero directamente aquí 
 	 * @param e
 	 */
 	public void save(Entidad e) {
@@ -194,6 +197,22 @@ public class Controlador {
 		}
 	}
 	
+//	
+//	public Entidad findPrevious(int idActual ) {
+//		
+//		try {
+//			return (Entidad) getEntityManager().
+//					createNativeQuery("select * from " + this.nombreEntidadControlada + " where id > " + idActual
+//							+ " order by id", this.tipoEntidad)
+//					.setMaxResults(1).getSingleResult();
+//		}
+//	}
+//	
+	
+	
+	
+	
+	
 	
 	/**
 	 * 
@@ -208,6 +227,6 @@ public class Controlador {
 		em.close();
 		return entidades;
 	}
-
+	
 	
 }

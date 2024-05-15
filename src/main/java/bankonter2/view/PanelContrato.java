@@ -279,7 +279,7 @@ public class PanelContrato extends JPanel {
 		});
 		GridBagConstraints gbc_jbtTipoContrato = new GridBagConstraints();
 		gbc_jbtTipoContrato.gridwidth = 2;
-		gbc_jbtTipoContrato.insets = new Insets(0, 0, 5, 0);
+		gbc_jbtTipoContrato.insets = new Insets(0, 0, 5, 5);
 		gbc_jbtTipoContrato.gridx = 2;
 		gbc_jbtTipoContrato.gridy = 5;
 		panel.add(jbtTipoContrato, gbc_jbtTipoContrato);
@@ -308,6 +308,7 @@ public class PanelContrato extends JPanel {
 			}
 		});
 		GridBagConstraints gbc_jbtUsuario = new GridBagConstraints();
+		gbc_jbtUsuario.insets = new Insets(0, 0, 0, 5);
 		gbc_jbtUsuario.gridwidth = 2;
 		gbc_jbtUsuario.gridx = 2;
 		gbc_jbtUsuario.gridy = 6;
